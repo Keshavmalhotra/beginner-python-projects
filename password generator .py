@@ -20,11 +20,11 @@ def password():
   elif user_input==0 and user_input2==0 and user_input3>0:
    print("password  with only  simbels   cannot be made")
    continue
-  elif count<6 or count>128:
-   print("the password length should not be <than 6 characters, or >than  128 characters..")
-   continue
   elif user_input4!= "y" and user_input4!= "n":
    print("invalid input!")
+   continue
+  elif count<6 or count>128:
+   print("the password length should not be <than 6 characters, or >than  128 characters..")
    continue
   numbers= "0123456789"
   chars= "abcdefghijklmnopqrstuvwxyz"
