@@ -28,21 +28,25 @@ def password():
    continue
   numbers= "0123456789"
   chars= "abcdefghijklmnopqrstuvwxyz"
-  symbols= "@!#$%^&*()_+=/.,:;|\<>[]{}"
+  symbols= "@!#$%^&*()_+=/.,:;|<>[]{}"
   password_numbers= random.choices(numbers, k= user_input2)
   password_characters= random.choices(chars, k= user_input)
   password_symbols= random.choices(symbols, k= user_input3)
-  all= password_characters + password_numbers + password_symbols
+  all= password_characters +password_numbers  + password_symbols
+  random.shuffle(all)
   all_joind= "".join(all)
-  result= random.choices(all_joind, k= count)
-  while not( result[0] in password_characters) and user_input>0:
-   result= random.choices(all_joind, k= count)
-  f_result= "".join(result)
+  while not( all_joind[0] in password_characters) and user_input>0:
+   password_numbers= random.choices(numbers, k= user_input2)
+   password_characters= random.choices(chars, k= user_input)
+   password_symbols= random.choices(symbols, k= user_input3)
+   all= password_characters + password_numbers + password_symbols
+   random.shuffle(all)
+   all_joind= "".join(all)
   if user_input4== "y":
-   f_result2= f_result.capitalize()
-   pyperclip.copy(f_result2)
-   print(F"your password is:{f_result2} it is  copied to your clipboard.")
+   all_joind2= all_joind.capitalize()
+   pyperclip.copy(all_joind2)
+   print(F"your password is:{all_joind2} it is  copied to your clipboard.")
   else:
-   pyperclip.copy(f_result)
-   print(F"your password is:{f_result} it is  copied to your clipboard.")
+   pyperclip.copy(all_joind)
+   print(F"your password is:{all_joind} it is  copied to your clipboard.")
 password()
