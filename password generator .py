@@ -12,6 +12,9 @@ def password():
   except ValueError:
    print("the input must be number!")
    continue  
+  except EOFError:
+   print("no inputs, exiting!")   
+   break
   user_input4= input("do  you want first carictor to be uppercase?  y for yes, n for no:")
   count= user_input + user_input2 + user_input3
   if user_input<0 or user_input2<0 or user_input3<0 or user_input==0 and user_input2==0 and user_input3==0:
