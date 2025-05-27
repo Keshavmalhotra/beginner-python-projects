@@ -1,55 +1,57 @@
 # Python Learning Projects
 
-These are three beginner-level Python projects created while learning the language.  
-Each one helped build a better understanding of logic, input handling, file system interaction, and core Python libraries.
+This repository contains three mini-projects created while learning Python. Each project focuses on core programming concepts like input/output, conditionals, loops, randomness, and system-level operations.
 
 ---
 
 ## 1. Password Generator
 
-**Description:**  
-A customizable password generator that asks the user how many:
-- Letters
-- Numbers
-- Symbols  
-...to include, and whether the first character should be uppercase. The generated password is automatically copied to the clipboard.
+A flexible password generator that allows users to choose:
+- Number of letters, numbers, and symbols
+- Whether the first character should be uppercase
+- Automatically copies the password to your clipboard
 
-**Purpose:**  
-Practices:
-- User input validation  
-- Random selection using `random`  
-- Clipboard copying with `pyperclip`  
-- Loop and condition control
+### Features:
+- Input validation
+- Randomized character selection
+- Clipboard support with `pyperclip`
 
 ---
 
-## 2. Guess the Number – Mini Game
+## 2. Guess the Number - Mini Game
 
-**Description:**  
-A terminal-based number guessing game with leveling mechanics. You gain points by guessing the correct number. Levels increase difficulty by expanding the guessing range and required points.
+A number guessing game where:
+- The range increases with each level
+- You need points to level up
+- Incorrect guesses show the correct answer
+- Game ends on EOF or invalid input repeatedly
 
-**Purpose:**  
-Practices:
-- `while` loops and control flow  
-- `random` number generation  
-- Game logic and state management  
-- Handling invalid input and progression systems
+### Features:
+- Dynamic difficulty scaling
+- Clean input validation
+- Motivational feedback during gameplay
 
 ---
 
 ## 3. Temp Folder Cleaner
 
-**Description:**  
-A script that deletes contents of system temp folders.  
-It skips files that raise permission errors or are currently in use.  
-⚠️ *This is still being improved, and may not fully work in all cases yet.*
+A utility script that deletes system temp folders to clean up junk files.
 
-**Purpose:**  
-Practices:
-- Environment variable access with `os.environ`  
-- Folder deletion using `shutil.rmtree`  
-- Error handling for file access and permissions
+### ⚠️ Important Before Use:
+You must **manually enter** the full paths of your temp folders inside the script. Open the `.py` file and add the paths as strings inside the `paths = ["", ""]` list.
 
----
-
-> These projects were made while learning Python and are being improved over time.
+Example:
+```python
+paths = ["C:/Users/YourName/AppData/Local/Temp", "C:/Windows/Temp"]
+How to Run:
+python temp_cleaner.py
+Notes:
+• 
+Files that require admin access or are in use will be skipped.
+• 
+Windows will recreate deleted temp folders automatically if needed.
+• 
+This script is simple and still under improvement; it may not remove all junk.
+ 
+Disclaimer
+These projects were made during the learning phase. The code may not follow best practices and is subject to updates and improvements over time.
