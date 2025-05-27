@@ -1,11 +1,55 @@
-These two mini projects were created as part of my journey learning Python programming. Both projects helped me practice essential programming concepts including input handling, loops, conditionals, error management, and working with external libraries.
+# Python Learning Projects
 
-Guess the Number Game
-A simple interactive game where the player tries to guess a randomly generated number within an increasing range. Correct guesses earn points, and as the player levels up, the difficulty increases by expanding the range and required points. The game validates user inputs, handles invalid or negative entries, and exits gracefully when no input is provided.
+These are three beginner-level Python projects created while learning the language.  
+Each one helped build a better understanding of logic, input handling, file system interaction, and core Python libraries.
 
-Password Generator
-This utility generates secure random passwords based on user preferences: number of letters, numbers, and symbols. It includes input validation to ensure meaningful passwords, supports the option for an uppercase first character, and copies the generated password to the clipboard automatically. It also prevents invalid configurations such as passwords made up only of symbols or too short/long passwords.
+---
 
-Both projects reflect my hands-on learning approach, solidifying my understanding of Python fundamentals and practical coding skills.
-# beginner-python-projects
-Beginner-level Python projects I'm building while learning Python.
+## 1. Password Generator
+
+**Description:**  
+A customizable password generator that asks the user how many:
+- Letters
+- Numbers
+- Symbols  
+...to include, and whether the first character should be uppercase. The generated password is automatically copied to the clipboard.
+
+**Purpose:**  
+Practices:
+- User input validation  
+- Random selection using `random`  
+- Clipboard copying with `pyperclip`  
+- Loop and condition control
+
+---
+
+## 2. Guess the Number – Mini Game
+
+**Description:**  
+A terminal-based number guessing game with leveling mechanics. You gain points by guessing the correct number. Levels increase difficulty by expanding the guessing range and required points.
+
+**Purpose:**  
+Practices:
+- `while` loops and control flow  
+- `random` number generation  
+- Game logic and state management  
+- Handling invalid input and progression systems
+
+---
+
+## 3. Temp Folder Cleaner
+
+**Description:**  
+A script that deletes contents of system temp folders.  
+It skips files that raise permission errors or are currently in use.  
+⚠️ *This is still being improved, and may not fully work in all cases yet.*
+
+**Purpose:**  
+Practices:
+- Environment variable access with `os.environ`  
+- Folder deletion using `shutil.rmtree`  
+- Error handling for file access and permissions
+
+---
+
+> These projects were made while learning Python and are being improved over time.
