@@ -53,3 +53,27 @@ User picks 1 for heads, 2 for tails.
 Script randomly selects the outcome.
 • 
 Displays result after a short delay.
+
+4. Snake and Ladders - Python Console Game 🎲🐍🪜
+
+A fun console-based implementation of the classic Snake and Ladders game. Play against a randomly chosen Indian-named bot. Avoid snakes, climb ladders, and be the first to reach 100!
+
+## Features
+
+- 🎲 Dice rolling mechanics for both user and bot
+- 🐍 Snakes that pull you back
+- 🪜 Ladders that boost your score
+- 👤 Player name input with validation (4–18 characters)
+- 🤖 Random bot opponent selection
+- 🎉 Win/lose messages with a 5-second delay before exiting
+- 🔄 Input options: 
+  - `r` to roll dice
+  - `s` to view snake positions
+  - `l` to view ladder positions
+
+## Rules
+
+- First to exactly **100 wins**
+- If a dice roll overshoots 100, the move is cancelled
+- Landing on a snake drops your score
+- Landing on a ladder boosts your score
