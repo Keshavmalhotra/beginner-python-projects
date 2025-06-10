@@ -54,7 +54,7 @@ Script randomly selects the outcome.
 • 
 Displays result after a short delay.
 
-4. Snake and Ladders - Python Console Game 🎲🐍🪜
+5. Snake and Ladders - Python Console Game 🎲🐍🪜
 
 A fun console-based implementation of the classic Snake and Ladders game. Play against a randomly chosen Indian-named bot. Avoid snakes, climb ladders, and be the first to reach 100!
 
@@ -77,3 +77,37 @@ A fun console-based implementation of the classic Snake and Ladders game. Play a
 - If a dice roll overshoots 100, the move is cancelled
 - Landing on a snake drops your score
 - Landing on a ladder boosts your score
+
+6. # Rock Paper Scissors (RPS) – Command Line Game 🎮
+
+This is a simple and interactive command-line implementation of the classic **Rock, Paper, Scissors** game written in Python.
+
+## 🧠 Game Rules
+
+- **Rock** beats **Scissors**
+- **Scissors** beats **Paper**
+- **Paper** beats **Rock**
+- Same choices result in a **Draw**
+
+## ▶️ How to Play
+
+1. Run the `rps.py` script using Python 3.
+2. You’ll be prompted to enter:
+   - `r` for **Rock**
+   - `p` for **Paper**
+   - `s` for **Scissors**
+   - `q` to **Quit the game**
+3. The computer randomly selects its choice.
+4. The result (Win / Lose / Draw) is shown.
+5. The game runs in a loop until you type `q` to exit.
+
+## 🖥️ Example
+
+```bash
+Your selection:
+Type 'r' for Rock
+Type 'p' for Paper
+Type 's' for Scissors
+Type 'q' for exiting the game
+Enter your choice: s
+You win! Computer selected Paper.
