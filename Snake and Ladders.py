@@ -1,6 +1,10 @@
 import random
 import time
-user_name= input("Type your name: ")
+user_name= None
+try:
+ user_name= input("Type your name: ")
+except EOFError:
+ print("no inputs, exiting.")
 while len(user_name)>18 or len(user_name)<4 or user_name== "":
  if user_name== "":
   print("the name  cannot be empty")
@@ -27,18 +31,17 @@ print(welcome_message)
 while user_score<100 and bot_score<100:
  try:
   time.sleep(0.5)
-  action= input("Type r to roll the dice, s to see snake positions, l to see ladder positions: ")
+  action= input("Type r to roll the dice, s to see snake positions, l to see ladder positions: ").lower()
  except EOFError:
   print("No input: exiting...")
   break
- action2= action.lower()
- if action2== "r":
+ if action== "r":
   user_roll= random.randint(1,6)
   user_score+= user_roll
   if user_score>100:
    user_score-= user_roll
   elif user_score== 100:
-   print(f"Congratulations, {user_name}, for winning the game!  {bot_name} was defeated.")  
+   print(f"{user_name} rolled the dice.  {user_name} got {user_roll}.  {user_name}'s score is {user_score}.  Congratulations, {user_name}, for winning the game!  {bot_name} was defeated.")  
    time.sleep(5)
    break
   print(f"{user_name} rolled the dice.  {user_name} got {user_roll}.  {user_name}'s score is {user_score}.")
@@ -52,13 +55,13 @@ while user_score<100 and bot_score<100:
    if user_score== x:
     user_score= ladder_ends[index2]
     print(F"Wow! {user_name} climbed to {user_score}")
- elif action2== "s":
+ elif action== "s":
   print(snakes)
   continue
- elif action2== "l" :
+ elif action== "l" :
   print(ladders)
   continue
- elif action2!= "r" or action2!= "s"  or action2!= "l":
+ else :
   print("invalid input!")
   continue
  bot_roll= random.randint(1,6)
