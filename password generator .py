@@ -1,55 +1,60 @@
 import random
 import pyperclip
-def password():
- user_input= None
- user_input2= None
- user_input3= None
+
+def generate_password():
+ user_letters = None
+ user_numbers = None
+ user_symbols = None
  while True:
   try:
-   user_input = int(input("how much letters you need on your password:"))
-   user_input2= int(input("how  much numbers you need on your password:"))
-   user_input3=  int(input("how much symbols  you need on your password:"))
+   user_letters = int(input("How many letters do you need in your password: "))
+   user_numbers = int(input("How many numbers do you need in your password: "))
+   user_symbols = int(input("How many symbols do you need in your password: "))
   except ValueError:
-   print("the input must be number!")
+   print("The input must be a number!")
    continue  
   except EOFError:
-   print("no inputs, exiting!")   
+   print("No inputs, exiting!")   
    break
-  user_input4= input("do  you want first carictor to be uppercase?  y for yes, n for no:")
-  count= user_input + user_input2 + user_input3
-  if user_input<0 or user_input2<0 or user_input3<0 or user_input==0 and user_input2==0 and user_input3==0:
+
+  first_upper = input("Do you want the first character to be uppercase? y for yes, n for no: ")
+  total_length = user_letters + user_numbers + user_symbols
+
+  if user_letters < 0 or user_numbers < 0 or user_symbols < 0 or user_letters == 0 and user_numbers == 0 and user_symbols == 0:
    print("The method is incorrect!")
    continue
-  elif user_input==0 and user_input2==0 and user_input3>0:
-   print("password  with only  simbels   cannot be made")
+  elif user_letters == 0 and user_numbers == 0 and user_symbols > 0:
+   print("Password with only symbols cannot be made")
    continue
-  elif user_input4!= "y" and user_input4!= "n":
-   print("invalid input!")
+  elif first_upper != "y" and first_upper != "n":
+   print("Invalid input!")
    continue
-  elif count<6 or count>128:
-   print("the password length should not be <than 6 characters, or >than  128 characters..")
+  elif total_length < 6 or total_length > 128:
+   print("The password length should not be less than 6 characters or greater than 128 characters.")
    continue
-  numbers= "0123456789"
-  chars= "abcdefghijklmnopqrstuvwxyz"
-  symbols= "@!#$%^&*()_+=/.,:;|<>[]{}"
-  password_numbers= random.choices(numbers, k= user_input2)
-  password_characters= random.choices(chars, k= user_input)
-  password_symbols= random.choices(symbols, k= user_input3)
-  all= password_characters +password_numbers  + password_symbols
-  random.shuffle(all)
-  all_joind= "".join(all)
-  while not( all_joind[0] in password_characters) and user_input>0:
-   password_numbers= random.choices(numbers, k= user_input2)
-   password_characters= random.choices(chars, k= user_input)
-   password_symbols= random.choices(symbols, k= user_input3)
-   all= password_characters + password_numbers + password_symbols
-   random.shuffle(all)
-   all_joind= "".join(all)
-  if user_input4== "y":
-   all_joind2= all_joind.capitalize()
-   pyperclip.copy(all_joind2)
-   print(F"your password is:{all_joind2} it is  copied to your clipboard.")
+
+  digits = "0123456789"
+  letters = "abcdefghijklmnopqrstuvwxyz"
+  special_chars = "@!#$%^&*()_+=/.,:;|<>[]{}"
+
+  selected_numbers = random.choices(digits, k=user_numbers)
+  selected_letters = random.choices(letters, k=user_letters)
+  selected_symbols = random.choices(special_chars, k=user_symbols)
+
+  combined = selected_letters + selected_numbers + selected_symbols
+  shuffled = random.sample(combined, k=len(combined))
+
+  while shuffled[0] not in selected_letters and user_letters>0:
+   shuffled = random.sample(combined, k=len(combined))
+
+  final_password = "".join(shuffled)
+
+  if first_upper == "y":
+   capitalized_password = final_password.capitalize()
+   pyperclip.copy(capitalized_password)
+   print(f"Your password is: {capitalized_password} — it has been copied to your clipboard.")
   else:
-   pyperclip.copy(all_joind)
-   print(F"your password is:{all_joind} it is  copied to your clipboard.")
-password()
+   pyperclip.copy(final_password)
+   print(f"Your password is: {final_password} — it has been copied to your clipboard.")
+
+generate_password()
